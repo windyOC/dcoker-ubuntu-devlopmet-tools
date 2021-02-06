@@ -4,6 +4,7 @@ FROM ubuntu:20.04
 RUN apt-get update && apt-get -y upgrade \
  bash-completion \
  build-essential \
+ ubuntu-server \
  curl \
  git \
  git-core \
