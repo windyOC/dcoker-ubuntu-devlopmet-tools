@@ -2,11 +2,11 @@
 FROM ubuntu:20.04
 
 RUN apt-get update
-RUN DEBIAN_FRONTEND=noninteractive apt install -q -y tzdata lightdm console-setup
+RUN DEBIAN_FRONTEND=noninteractive apt install -qq -y tzdata lightdm console-setup
 
 
-RUN apt-get update && \
- DEBIAN_FRONTEND=noninteractive apt-get -q -y upgrade \
+RUN apt-get -qq update && \
+ DEBIAN_FRONTEND=noninteractive apt-get -qq -y upgrade \
  bash-completion \
  build-essential \
  ubuntu-server \
