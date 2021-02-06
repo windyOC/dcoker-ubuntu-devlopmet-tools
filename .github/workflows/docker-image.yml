@@ -14,8 +14,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag ubuntu-dev:$(date +%s)
     -
       name: Set up QEMU
       uses: docker/setup-qemu-action@v1
