@@ -1,7 +1,12 @@
 # 搭建基于Ubuntu的容器开发环境
 FROM ubuntu:20.04
 
-RUN apt-get update && apt-get -y upgrade \
+RUN apt-get update
+RUN DEBIAN_FRONTEND=noninteractive apt install -y tzdata lightdm console-setup
+
+
+RUN apt-get update && \
+ DEBIAN_FRONTEND=noninteractive apt-get -y upgrade \
  bash-completion \
  build-essential \
  ubuntu-server \
