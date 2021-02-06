@@ -17,7 +17,7 @@ jobs:
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag ubuntu-dev:$(date +%s)
     - name: Build and push
-      uses: docker/build-push-action@v2
+      uses: docker/build-push-action@v1
       with:
           username: ${{ secrets.DOCKER_ID }}
           password: ${{ secrets.DOCKER_PASSWD }}
