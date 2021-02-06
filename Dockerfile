@@ -1,7 +1,7 @@
 # build docker development environment by Ubuntu
 FROM ubuntu:20.04
 
-RUN apt-get update && unminimize
+RUN yes | unminimize 
 RUN DEBIAN_FRONTEND=noninteractive apt install -qq -y tzdata lightdm console-setup
 
 
@@ -28,7 +28,7 @@ RUN apt-get -qq update && \
  wget
 
  #change root password
-RUN  echo "root:password" | chpasswd
+RUN echo "root:password" | chpasswd
 
 #enable root remote ssh
 RUN echo "PermitRootLogin yes" >> /etc/ssh/sshd_config 
