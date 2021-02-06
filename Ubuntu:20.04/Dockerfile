@@ -1,0 +1,28 @@
+# 搭建基于Ubuntu的容器开发环境
+FROM ubuntu:20.04
+
+RUN apt-get update && apt-get -y upgrade \
+ bash-completion \
+ build-essential \
+ curl \
+ git \
+ git-core \
+ golang \
+ htop \
+ locales \
+ man \
+ nmap \
+ python3-pip \
+ ruby-full \
+ strace \
+ sudo \
+ tig \
+ vim \
+ wget
+
+ #change root password
+RUN  echo "password" | passwd --stdin root
+
+#enable root remote ssh
+RUN echo "PermitRootLogin yes" >> /etc/ssh/sshd_config
+
