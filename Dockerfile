@@ -27,7 +27,7 @@ RUN apt-get update && \
  wget
 
  #change root password
-RUN  echo "password" | passwd --stdin root
+RUN  echo "root:password" | chpasswd
 
 #enable root remote ssh
 RUN echo "PermitRootLogin yes" >> /etc/ssh/sshd_config
