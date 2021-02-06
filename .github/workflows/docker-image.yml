@@ -17,7 +17,7 @@ jobs:
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag ubuntu-dev:$(date +%s)
     - name: Push to Docker Hub
-        uses: docker/build-push-action@v1
+        uses: docker/build-push-action
         with:
           username: ${{ secrets.DOCKER_ID }}
           password: ${{ secrets.DOCKER_PASSWD }}
