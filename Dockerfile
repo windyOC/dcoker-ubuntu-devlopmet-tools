@@ -1,7 +1,7 @@
 # build docker development environment by Ubuntu
 FROM ubuntu:20.04
 
-RUN DEBIAN_FRONTEND=noninteractive apt-get update && unminimize
+RUN apt-get update && unminimize
 RUN DEBIAN_FRONTEND=noninteractive apt install -qq -y tzdata lightdm console-setup
 
 
