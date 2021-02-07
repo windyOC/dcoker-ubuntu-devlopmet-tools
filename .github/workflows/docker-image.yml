@@ -10,7 +10,7 @@ jobs:
 
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
 
     steps:
     - uses: actions/checkout@v2
@@ -25,44 +25,20 @@ jobs:
       with:
         username: ${{ secrets.DOCKER_HUB_USERNAME }}
         password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
-    - name: Build and push amd64
-      uses: docker/build-push-action@v2
-      with:
-          context: .
-          file: ./Dockerfile
-          platforms: linux/amd64
-          push: true
-          tags: windyoc/ubuntu-development:latest
-    - name: Build and push arm/v7
-      uses: docker/build-push-action@v2
-      with:
-          context: .
-          file: ./Dockerfile
-          platforms: linux/arm/v7
-          push: true
-          tags: windyoc/ubuntu-development:latest
-    - name: Build and push arm64/v8
-      uses: docker/build-push-action@v2
-      with:
-          context: .
-          file: ./Dockerfile
-          platforms: linux/arm64/v8
-          push: true
-          tags: windyoc/ubuntu-development:latest
-    - name: Build and push ppc64le
-      uses: docker/build-push-action@v2
-      with:
-          context: .
-          file: ./Dockerfile
-          platforms: linux/ppc64le
-          push: true
-          tags: windyoc/ubuntu-development:latest
-    - name: Build and push s390x
+    - name: Build and push
       uses: docker/build-push-action@v2
       with:
           context: .
           file: ./Dockerfile
           platforms: linux/amd64,linux/arm/v7,linux/arm64/v8,linux/ppc64le,linux/s390x
           push: true
-          tags: windyoc/ubuntu-development:latest
-
+          cache-from: type=local,src=/tmp/.buildx-cache
+          cache-to: type=local,dest=/tmp/.buildx-cache
+          tags: windyoc/ubuntu-development:20.04
+    - name: Cache Docker layers
+      uses: actions/cache@v2
+      with:
+        path: /tmp/.buildx-cache
+        key: ${{ runner.os }}-buildx-${{ github.sha }}
+        restore-keys: |
+          ${{ runner.os }}-buildx-
