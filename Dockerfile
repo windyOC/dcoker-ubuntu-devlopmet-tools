@@ -4,6 +4,7 @@ FROM ubuntu:20.04
                                                                                                                                                                 
 
 RUN apt-get -qq update && \
+yes | unminimize && \
  DEBIAN_FRONTEND=noninteractive apt-get -qq -y upgrade \
  bash-completion \
  build-essential \
