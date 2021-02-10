@@ -6,7 +6,6 @@ FROM ubuntu:20.04
 RUN apt-get -qq update && \
 yes | unminimize   > /dev/null && \
  DEBIAN_FRONTEND=noninteractive apt-get -y upgrade \
- apt-utils \
  bash-completion \
  curl \
  vim \
