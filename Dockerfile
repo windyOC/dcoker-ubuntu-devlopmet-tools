@@ -14,7 +14,6 @@ yes | unminimize   > /dev/null && \
  sudo \
  vim \
  wget \
- sysbench \
   > /dev/null
 
 
