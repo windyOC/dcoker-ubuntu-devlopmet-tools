@@ -5,7 +5,7 @@
 
 #### 使用方法
 
-`docker run -p 5472:22 windyoc/ubuntu-development:20.04`
+`docker run -d -p 5472:22 -e password="wesode123" windyoc/ubuntu-development`
 
-初始密码：password
+初始密码：wesode123
 初始端口：5472

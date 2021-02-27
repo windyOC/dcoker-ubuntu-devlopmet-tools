@@ -14,12 +14,8 @@ yes | unminimize   > /dev/null && \
  sudo \
  vim \
  wget \
+ openssh-server \
   > /dev/null
 
-
-RUN apt-get install openssh-server -y   > /dev/null && mkdir /var/run/sshd && \             
-echo "root:password" | chpasswd && echo "PermitRootLogin yes" >> /etc/ssh/sshd_config   
-#change root password && enable root remote ssh
-
-CMD ["/usr/sbin/sshd", "-D"]
+ENTRYPOINT ["/bin/bash", "run.sh"]
 
