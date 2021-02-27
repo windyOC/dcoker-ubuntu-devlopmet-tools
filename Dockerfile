@@ -17,5 +17,7 @@ yes | unminimize   > /dev/null && \
  openssh-server \
   > /dev/null
 
-ENTRYPOINT ["/bin/bash", "run.sh"]
+ADD ./run.sh ./run.sh
+
+ENTRYPOINT ["/bin/bash", "./run.sh"]
 
