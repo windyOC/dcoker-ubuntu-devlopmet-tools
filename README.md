@@ -16,4 +16,4 @@
 
 初始端口：5472
 
-PS:使用其他用户时sudo命令可用
+详细说明：https://www.yuque.com/docs/share/73f01101-85f0-405d-b42e-0b5b709b0966?# 《Ubuntu Development in Docker》
