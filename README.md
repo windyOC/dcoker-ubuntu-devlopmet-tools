@@ -6,11 +6,11 @@
 #### 使用方法
 - 直接使用root用户
 
-         docker run -d -p 5472:22 -e user="root" password="wesode123" windyoc/ubuntu-development
+         docker run -d -p 5472:22 -e user="root" -e password="wesode123" windyoc/ubuntu-development
 
 - 使用其他（test）用户
 
-        docker run -d -p 5472:22 -e user="test" password="wesode123" windyoc/ubuntu-development
+        docker run -d -p 5472:22 -e user="test" -e password="wesode123" windyoc/ubuntu-development
 
 初始密码：wesode123
 
