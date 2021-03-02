@@ -16,4 +16,7 @@
 
 初始端口：5472
 
-详细说明：https://www.yuque.com/docs/share/73f01101-85f0-405d-b42e-0b5b709b0966?# 《Ubuntu Development in Docker》
+- Docker hub:[windyoc/ubuntu-development](https://hub.docker.com/r/windyoc/ubuntu-development)
+
+- 详细说明：[《Ubuntu Development in Docker》](https://www.yuque.com/docs/share/73f01101-85f0-405d-b42e-0b5b709b0966?#) 
+
