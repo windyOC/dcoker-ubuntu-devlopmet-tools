@@ -10,6 +10,7 @@ yes | unminimize   > /dev/null && \
  curl \
  vim \
  gcc \
+ g++ \
  make \
  sudo \
  vim \
