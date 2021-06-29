@@ -1,5 +1,5 @@
 # build docker development environment by Ubuntu
-FROM ubuntu:18.04
+FROM ubuntu:20.04
 
                                                                                                                                                                 
 
