@@ -17,7 +17,7 @@ jobs:
         path: /tmp/.buildx-cache
         key: ${{ runner.os }}-buildx-${{ github.sha }}
         restore-keys: |
-          ${{ runner.os }}-buildx-
+          ${{ runner.os }}-buildx-20.04
     -
       name: Set up QEMU
       uses: docker/setup-qemu-action@v1
