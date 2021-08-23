@@ -3,7 +3,7 @@ name: Docker Image CI
 on:
   push:
     schedule:
-    - cron: '10 1 * * *'
+    - cron: '10 4 * * 6'
 jobs:
 
   build:
